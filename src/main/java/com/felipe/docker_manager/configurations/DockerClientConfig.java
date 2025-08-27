@@ -19,7 +19,7 @@ public class DockerClientConfig
         DefaultDockerClientConfig.Builder dockerClientConfigBuilder = DefaultDockerClientConfig
                 .createDefaultConfigBuilder();
 
-        if (this.dockerSocketPath != null && this.dockerSocketPath.startsWith("unix://")) {
+        if (this.dockerSocketPath != null && this.dockerSocketPath.startsWith("tcp://")) {
             dockerClientConfigBuilder.withDockerHost(dockerSocketPath)
                     .withDockerTlsVerify(false);
         }

@@ -23,7 +23,7 @@ public class DockerService
         dockerClient.createContainerCmd(imageName).exec();
     }
 
-    public List<Container> ListContainers(boolean showAll) {
+    public List<Container> listContainers(boolean showAll) {
         return dockerClient.listContainersCmd().withShowAll(showAll).exec();
     }
 
@@ -35,7 +35,7 @@ public class DockerService
         dockerClient.stopContainerCmd(containerId).exec();
     }
 
-    public void removeContainer(String containerId) {
+    public void deleteContainer(String containerId) {
         dockerClient.removeContainerCmd(containerId).exec();
     }
 
